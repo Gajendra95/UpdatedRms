@@ -18,7 +18,7 @@ namespace UnitTest1
 
 
         [Test]
-        public void test1()
+        public void FacultyPublication()
         {
             string Url = "http://172.16.18.106/rmsstage";
             IWebDriver driver = new ChromeDriver();
@@ -335,7 +335,7 @@ namespace UnitTest1
         Task.Delay(2000);
         driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_searchbtn")).Submit();*/
         [Test]
-        public void test2()
+        public void LibrarianApproval()
         {
             string Url = "http://172.16.18.106/rmsstage";
             IWebDriver driver = new ChromeDriver();
@@ -378,7 +378,7 @@ namespace UnitTest1
             selecttype.SelectByText("Journal Article");
             Task.Delay(2000);
 
-            driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_PubIDSearch")).SendKeys("00000453");
+            driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_PubIDSearch")).SendKeys("00000454");
             Task.Delay(2000);
 
 
@@ -424,7 +424,7 @@ namespace UnitTest1
 
 
         [Test]
-        public void test3()
+        public void Approval()
         {
             string Url = "http://172.16.18.106/rmsstage";
             IWebDriver driver = new ChromeDriver();
@@ -443,7 +443,7 @@ namespace UnitTest1
             selectother.SelectByText("Journal Article");
             Task.Delay(2000);
 
-            driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_PubIDSearch")).SendKeys("00000453");
+            driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_PubIDSearch")).SendKeys("00000454");
             Task.Delay(2000);
 
 
@@ -494,20 +494,51 @@ namespace UnitTest1
         }
 
         [Test]
-        public void test4()
+        public void failtest()
         {
-            string Url = "http://172.16.16.47/RMSPublish";
+            string Url = "http://172.16.18.106/rmsstage";
             IWebDriver driver = new ChromeDriver();
-
-
-            //IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl(Url);
-            //driver.Url = "http://172.16.51.47/RMSPublish/Login.aspx";
-            //driver.FindElement(By.Id("ctl00_ContentPlaceHolderhead_TextBoxUid")).SendKeys("fassv4");
-            //driver.FindElement(By.Id("ctl00_ContentPlaceHolderhead_TextBoxPassword")).SendKeys("mubop@123");
-            //driver.FindElement(By.Id("ctl00_ContentPlaceHolderhead_Button1")).Click();
+
+
+
+            driver.FindElement(By.Id("ctl00_ContentPlaceHolderhead_TextBoxUid")).SendKeys("fassv2");
+            driver.FindElement(By.Id("ctl00_ContentPlaceHolderhead_TextBoxPassword")).SendKeys("mubop@123");
+            driver.FindElement(By.Id("ctl00_ContentPlaceHolderhead_Button1")).Click();
             Task.Delay(2000);
-            driver.Close();
+
+            var option7 = driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_EntryTypesearch"));
+            var selectother = new SelectElement(option7);
+            //System.Threading.Thread.Sleep(2000);
+            selectother.SelectByText("Journal Article");
+            Task.Delay(2000);
+
+            driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_PubIDSearch")).SendKeys("00000453");
+            Task.Delay(2000);
+
+
+
+            driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_ButtonSearchPub")).Click();
+            Task.Delay(2000).Wait();
+
+            driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_GridViewSearch_ctl02_BtnEdit")).Click();
+            Task.Delay(2000).Wait();
+
+            driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_TextBoxEprintURL")).SendKeys("www.google.com");
+            Task.Delay(2000).Wait();
+
+            driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_txtContent")).SendKeys("information");
+            Task.Delay(2000).Wait();
+
+            driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_btnSendNotification")).Click();
+            Task.Delay(2000).Wait();
+
+            driver.SwitchTo().Alert().Accept();
+            Task.Delay(2000).Wait();                                                              //send notification
+
+
+            driver.FindElement(By.Id("ctl00_Label3")).Click();
+            Task.Delay(4000).Wait();
         }
         }
     }
