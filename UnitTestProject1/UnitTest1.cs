@@ -264,7 +264,7 @@ namespace UnitTest1
 
             driver.FindElement(By.Id("ctl00_Label3")).Click();
             Task.Delay(4000).Wait();                                                                  //Faculty Logout
-
+            driver.Close();
         }
 
         //driver.FindElement(By.XPath("ctl00_ContentPlaceHolder1_Grid_AuthorEntry_ctl02_EmployeeCode")).SendKeys("543");
@@ -378,7 +378,7 @@ namespace UnitTest1
             selecttype.SelectByText("Journal Article");
             Task.Delay(2000);
 
-            driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_PubIDSearch")).SendKeys("00000444");
+            driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_PubIDSearch")).SendKeys("00000453");
             Task.Delay(2000);
 
 
@@ -394,6 +394,13 @@ namespace UnitTest1
 
             //driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_Grid_AuthorEntry_ctl03_txtBasePoint")).SendKeys("5");
             //Task.Delay(2000).Wait();
+            //driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_Grid_AuthorEntry_ctl03_txtBasePoint")).SendKeys("5");
+            //Task.Delay(2000).Wait();
+
+            //driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_ButtonConfirm")).Click();
+            //Task.Delay(2000).Wait();
+            //driver.SwitchTo().Alert().Accept();
+            //Task.Delay(2000).Wait();
 
             driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_btnApprove")).Click();
             Task.Delay(2000).Wait();
@@ -408,7 +415,10 @@ namespace UnitTest1
 
 
             driver.FindElement(By.Id("ctl00_Label3")).Click();
-            Task.Delay(4000).Wait();                                                          //librarian approval
+            Task.Delay(4000).Wait();
+            //librarian approval
+            driver.Close();        
+        
         }
 
 
@@ -433,7 +443,7 @@ namespace UnitTest1
             selectother.SelectByText("Journal Article");
             Task.Delay(2000);
 
-            driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_PubIDSearch")).SendKeys("00000444");
+            driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_PubIDSearch")).SendKeys("00000453");
             Task.Delay(2000);
 
 
@@ -460,7 +470,7 @@ namespace UnitTest1
             driver.FindElement(By.Id("ctl00_Label3")).Click();
             Task.Delay(4000).Wait();
 
-            driver.Close();
+            //driver.Close();
 
 
 
@@ -480,7 +490,7 @@ namespace UnitTest1
             //Task.Delay(2000);
             //driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_searchbtn")).Submit();
 
-            //driver.Close();
+            driver.Close();
         }
 
         [Test]
@@ -493,10 +503,11 @@ namespace UnitTest1
             //IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl(Url);
             //driver.Url = "http://172.16.51.47/RMSPublish/Login.aspx";
-            driver.FindElement(By.Id("ctl00_ContentPlaceHolderhead_TextBoxUid")).SendKeys("fassv4");
-            driver.FindElement(By.Id("ctl00_ContentPlaceHolderhead_TextBoxPassword")).SendKeys("mubop@123");
-            driver.FindElement(By.Id("ctl00_ContentPlaceHolderhead_Button1")).Click();
+            //driver.FindElement(By.Id("ctl00_ContentPlaceHolderhead_TextBoxUid")).SendKeys("fassv4");
+            //driver.FindElement(By.Id("ctl00_ContentPlaceHolderhead_TextBoxPassword")).SendKeys("mubop@123");
+            //driver.FindElement(By.Id("ctl00_ContentPlaceHolderhead_Button1")).Click();
             Task.Delay(2000);
+            driver.Close();
         }
         }
     }
