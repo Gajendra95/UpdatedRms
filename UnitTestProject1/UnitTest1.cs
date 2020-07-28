@@ -20,7 +20,7 @@ namespace UnitTest1
         [Test]
         public void FacultyPublication()
         {
-            string Url = "http://172.16.18.106/rmsstage";
+            string Url = "http://172.16.18.160/RMSPublish";
             IWebDriver driver = new ChromeDriver();
 
 
@@ -337,7 +337,7 @@ namespace UnitTest1
         [Test]
         public void LibrarianApproval()
         {
-            string Url = "http://172.16.18.106/rmsstage";
+            string Url = "http://172.16.18.160/RMSPublish";
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl(Url);
 
@@ -426,7 +426,7 @@ namespace UnitTest1
         [Test]
         public void Approval()
         {
-            string Url = "http://172.16.18.106/rmsstage";
+            string Url = "http://172.16.18.160/RMSPublish";
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl(Url);
 
@@ -496,7 +496,7 @@ namespace UnitTest1
         [Test]
         public void failtest()
         {
-            string Url = "http://172.16.18.106/rmsstage";
+            string Url = "http://172.16.18.160/RMSPublish";
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl(Url);
 
